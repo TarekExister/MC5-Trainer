@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4477B15-5713-4872-A491-828B1C5294A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ModernCombatTrainer</RootNamespace>
+    <AssemblyName>ModernCombatTrainer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MC5ICO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameModel\Movements\Jump.cs" />
+    <Compile Include="GameModel\Movements\SaveLoadCoords.cs" />
+    <Compile Include="GameModel\Movements\TpToAimCoords.cs" />
+    <Compile Include="GameModel\Movements\WallHackV1.cs" />
+    <Compile Include="GameModel\Player\AutoShoot.cs" />
+    <Compile Include="GameModel\Player\UnlimitedHP.cs" />
+    <Compile Include="GameModel\Weapons\UnlimitedAmmo.cs" />
+    <Compile Include="GameModel\Weapons\UnlimitedVerrPower.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MC5Memory\GameMemory.cs" />
+    <Compile Include="MC5Memory\Mc5Mem.cs" />
+    <Compile Include="MC5Screen\UpdateTrainerLocation.cs" />
+    <Compile Include="MovementsGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovementsGui.Designer.cs">
+      <DependentUpon>MovementsGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerGui.Designer.cs">
+      <DependentUpon>PlayerGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainerSettings\KeysEvents.cs" />
+    <Compile Include="TrainerSettings\SwitchBetweenForms.cs" />
+    <Compile Include="TrainerSettings\UpdateForm.cs" />
+    <Compile Include="TrainerUi\ControlSetting.cs" />
+    <Compile Include="WeaponGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeaponGui.Designer.cs">
+      <DependentUpon>WeaponGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsAPI\Kernel32.cs" />
+    <Compile Include="WindowsAPI\User32.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovementsGui.resx">
+      <DependentUpon>MovementsGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerGui.resx">
+      <DependentUpon>PlayerGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WeaponGui.resx">
+      <DependentUpon>WeaponGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MC5ICO.ico" />
+    <None Include="Resources\MC5 Title.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
