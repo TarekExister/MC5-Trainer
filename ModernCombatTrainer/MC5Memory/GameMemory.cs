@@ -13,7 +13,7 @@ namespace ModernCombatTrainer.MC5Memory
         private static IntPtr LocalPlayer = (IntPtr)Mc5Mem.GetModuleAddress(ProcessName, ProcessName) + 0x181FFA0;
 
         private static IntPtr ShootFlagBase = (IntPtr)Mc5Mem.GetModuleAddress(ProcessName, ProcessName) + 0x01821A70;
-        private static IntPtr TargetTypeBase = (IntPtr)Mc5Mem.GetModuleAddress(ProcessName, ProcessName) + 0x018259D0;
+        private static IntPtr TargetTypeBase = (IntPtr)Mc5Mem.GetModuleAddress(ProcessName, ProcessName) + 0x18259D0;
 
         public enum Target {Enemy = 7, Friendly = 9 };
 
@@ -27,7 +27,7 @@ namespace ModernCombatTrainer.MC5Memory
 
         public static class Coordinates
         {
-            public static IntPtr XAddress = Mc5Mem.GetPointerAddress(LocalPlayer, new int[] { 0x1F8, 0x38 }, 2);
+            public static IntPtr XAddress = Mc5Mem.GetPointerAddress(LocalPlayer, new int[] { 0x494, 0x0, 0x6E8, 0x4, 0x38 }, 5);
             public static IntPtr YAddress = XAddress + 4;
             public static IntPtr ZAddress = YAddress + 4;
         }
@@ -41,7 +41,7 @@ namespace ModernCombatTrainer.MC5Memory
 
         public static class CameraRoll
         {
-            public static IntPtr Address = Mc5Mem.GetPointerAddress(LocalPlayer, new int[] { 0x1F8, 0x4C }, 2);
+            public static IntPtr Address = Mc5Mem.GetPointerAddress(LocalPlayer, new int[] { 0x494, 0x0, 0x6E8, 0x4, 0x4C }, 5);
         }
 
         public static class Health 
@@ -51,7 +51,7 @@ namespace ModernCombatTrainer.MC5Memory
 
         public static class TargetType 
         {
-            public static IntPtr Address = Mc5Mem.GetPointerAddress(TargetTypeBase, new int[] { 0x75C, 0x38, 0xE8, 0x3D4 , 0x20 , 0x10C , 0x0 }, 7);
+            public static IntPtr Address = Mc5Mem.GetPointerAddress(TargetTypeBase, new int[] { 0x290, 0x40C, 0x20, 0x10C, 0x0 }, 5);
         }
 
         public static class ShootFlag
