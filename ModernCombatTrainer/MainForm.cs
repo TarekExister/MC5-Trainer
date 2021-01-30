@@ -49,6 +49,8 @@ namespace ModernCombatTrainer
             wg.Visible = false;
             mg.Visible = false;
 
+            TrainerSettings.FrmCloseEvent.KillProc(this);
+
             this.LocationChanged += delegate 
             {
                 TrainerSettings.UpdateForm.UpdateLocation(TrainerSettings.UpdateForm.frm1, new Point(this.Left + this.Width + 1, (this.Top + lblPlayer.Top) - 4));
