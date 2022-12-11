@@ -10,7 +10,7 @@ namespace ModernCombatTrainer.MC5Screen
 {
     public static class UpdateTrainerLocation
     {
-        private static readonly string ProcessName = "WindowsEntryPoint.Windows";
+        private static readonly string ProcessName = "WindowsEntryPoint.Windows_W10";
 
         public static void SetToTopLeft(Form frm) /*SetToTopMiddle()*/
         {
